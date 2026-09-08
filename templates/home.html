@@ -1,0 +1,397 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Shop | Cooler, Fan, Heater & Lights</title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        My Shop
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/products/">
+            Products
+        </a>
+
+        <a href="#categories">
+            Categories
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            Welcome to Our Shop
+        </span>
+
+        <h1>
+            Cooling, Heating &
+            <span>Lighting Solutions</span>
+        </h1>
+
+        <p>
+            Coolers, Fans, Heaters, Diwali Lights
+            & Electrical Spare Parts
+        </p>
+
+        <p class="hero-subtitle">
+            Different Sizes • Different Models •
+            Multiple Varieties
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="/products/"
+                class="btn btn-primary"
+            >
+                🛍️ Explore Products
+            </a>
+
+            <a
+                href="tel:+919798323932"
+                class="btn btn-outline"
+            >
+                📞 Call Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section
+    class="categories"
+    id="categories"
+>
+
+    <div class="section-heading">
+
+        <span>
+            SHOP BY CATEGORY
+        </span>
+
+        <h2>
+            What Are You Looking For?
+        </h2>
+
+        <p>
+            Explore our different product categories.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <!-- SUMMER -->
+
+        <div class="category-card summer-card">
+
+            <div class="category-icon">
+                ☀️
+            </div>
+
+            <h3>
+                Summer Products
+            </h3>
+
+            <p>
+                Coolers, Table Fans, Bullet Fans,
+                Stand Fans, Ceiling Fans & more.
+            </p>
+
+            <a href="/products/?category=summer">
+                View Summer Products →
+            </a>
+
+        </div>
+
+
+        <!-- WINTER -->
+
+        <div class="category-card winter-card">
+
+            <div class="category-icon">
+                ❄️
+            </div>
+
+            <h3>
+                Winter Products
+            </h3>
+
+            <p>
+                Sun Heaters, Quartz Heaters,
+                Immersion Rods & more.
+            </p>
+
+            <a href="/products/?category=winter">
+                View Winter Products →
+            </a>
+
+        </div>
+
+
+        <!-- DIWALI -->
+
+        <div class="category-card diwali-card">
+
+            <div class="category-icon">
+                🪔
+            </div>
+
+            <h3>
+                Diwali Lights
+            </h3>
+
+            <p>
+                Copper Wire Lights, Temple Lights,
+                Multi Function Lights & more.
+            </p>
+
+            <a href="/products/?category=diwali">
+                View Diwali Lights →
+            </a>
+
+        </div>
+
+
+        <!-- SPARE PARTS -->
+
+        <div class="category-card spare-card">
+
+            <div class="category-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Spare Parts
+            </h3>
+
+            <p>
+                Cooler, Fan, Motor, Pump and
+                other electrical spare parts.
+            </p>
+
+            <a href="/products/?category=spare_parts">
+                View Spare Parts →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURE ================= -->
+
+<section class="why-us">
+
+    <div class="section-heading">
+
+        <span>
+            WHY CHOOSE US
+        </span>
+
+        <h2>
+            Everything You Need
+        </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                🏪
+            </div>
+
+            <h3>
+                Wide Variety
+            </h3>
+
+            <p>
+                Different products, sizes and
+                models available.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                💰
+            </div>
+
+            <h3>
+                Reasonable Prices
+            </h3>
+
+            <p>
+                Contact us for current price
+                and availability.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                📱
+            </div>
+
+            <h3>
+                Easy Enquiry
+            </h3>
+
+            <p>
+                Call or WhatsApp us directly
+                for product details.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                🔧
+            </div>
+
+            <h3>
+                Spare Parts
+            </h3>
+
+            <p>
+                Useful cooler and fan spare
+                parts are also available.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="contact-content">
+
+        <span>
+            HAVE A QUESTION?
+        </span>
+
+        <h2>
+            Looking For a Product?
+        </h2>
+
+        <p>
+            Contact us for product details,
+            price and availability.
+        </p>
+
+        <div class="contact-buttons">
+
+            <a
+                href="tel:+919798323932"
+                class="btn btn-white"
+            >
+                📞 Call Us
+            </a>
+
+            <a
+                href="https://wa.me/919798323932"
+                target="_blank"
+                class="btn btn-whatsapp"
+            >
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        My Shop
+    </div>
+
+    <p>
+        Coolers • Fans • Heaters • Diwali Lights
+        • Spare Parts
+    </p>
+
+    <p class="copyright">
+        © 2026 My Shop. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

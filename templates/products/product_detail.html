@@ -1,0 +1,288 @@
+```html
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{{ product.name }} | My Shop</title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        My Shop
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/products/">
+            Products
+        </a>
+
+        <a href="/#categories">
+            Categories
+        </a>
+
+        <a href="/#contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= PRODUCT DETAIL ================= -->
+
+<section class="product-detail-page">
+
+    <div class="product-detail-container">
+
+
+        <!-- ================= IMAGE ================= -->
+
+        <div class="product-detail-image">
+
+            {% if product.image %}
+
+                <img
+                    src="{{ product.image.url }}"
+                    alt="{{ product.name }}"
+                >
+
+            {% else %}
+
+                <div class="detail-no-image">
+
+                    📦
+
+                    <span>
+                        No Image Available
+                    </span>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <div class="product-detail-info">
+
+
+            <span class="product-detail-category">
+
+                {{ product.subcategory }}
+
+            </span>
+
+
+            <h1>
+
+                {{ product.name }}
+
+            </h1>
+
+
+            {% if product.brand %}
+
+                <p class="detail-row">
+
+                    <strong>
+                        Brand:
+                    </strong>
+
+                    {{ product.brand }}
+
+                </p>
+
+            {% endif %}
+
+
+            {% if product.model %}
+
+                <p class="detail-row">
+
+                    <strong>
+                        Model:
+                    </strong>
+
+                    {{ product.model }}
+
+                </p>
+
+            {% endif %}
+
+
+            {% if product.size %}
+
+                <p class="detail-row">
+
+                    <strong>
+                        Size:
+                    </strong>
+
+                    {{ product.size }}
+
+                </p>
+
+            {% endif %}
+
+
+            <!-- ================= PRICE ================= -->
+
+            <div class="detail-price">
+
+                Contact for Price
+
+            </div>
+
+
+            <!-- ================= DESCRIPTION ================= -->
+
+            {% if product.description %}
+
+                <div class="detail-section">
+
+                    <h3>
+                        Description
+                    </h3>
+
+                    <p>
+                        {{ product.description|linebreaksbr }}
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- ================= FEATURES ================= -->
+
+            {% if product.features %}
+
+                <div class="detail-section">
+
+                    <h3>
+                        Features
+                    </h3>
+
+                    <p>
+                        {{ product.features|linebreaksbr }}
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+
+            <!-- ================= BUTTONS ================= -->
+
+            <div class="detail-buttons">
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/919798323932?text=Hello%2C%20I%20want%20to%20know%20the%20price%20and%20availability%20of%20{{ product.name|urlencode }}"
+                    target="_blank"
+                    class="detail-whatsapp"
+                >
+
+                    💬 WhatsApp Enquiry
+
+                </a>
+
+
+                <!-- CALL -->
+
+                <a
+                    href="tel:+919798323932"
+                    class="detail-call"
+                >
+
+                    📞 Call Now
+
+                </a>
+
+
+            </div>
+
+
+            <!-- ================= BACK ================= -->
+
+            <a
+                href="/products/"
+                class="back-products"
+            >
+
+                ← Back to Products
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        My Shop
+
+    </div>
+
+
+    <p>
+
+        Coolers • Fans • Heaters • Diwali Lights
+        • Spare Parts
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 My Shop. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```

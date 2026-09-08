@@ -1,0 +1,346 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products | My Shop</title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        My Shop
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/products/">
+            Products
+        </a>
+
+        <a href="/#categories">
+            Categories
+        </a>
+
+        <a href="/#contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= PRODUCTS PAGE ================= -->
+
+<section class="products-page">
+
+
+    <div class="products-heading">
+
+        <span>
+            OUR COLLECTION
+        </span>
+
+        <h1>
+            Explore Our Products
+        </h1>
+
+        <p>
+            Find coolers, fans, heaters,
+            Diwali lights and spare parts.
+        </p>
+
+    </div>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <form
+        method="GET"
+        class="search-box"
+    >
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search product, brand or model..."
+            value="{{ search }}"
+        >
+
+        {% if selected_category %}
+
+            <input
+                type="hidden"
+                name="category"
+                value="{{ selected_category }}"
+            >
+
+        {% endif %}
+
+        <button type="submit">
+            🔍 Search
+        </button>
+
+    </form>
+
+
+    <!-- ================= CATEGORY FILTER ================= -->
+
+    <div class="category-filter">
+
+        <a
+            href="/products/"
+            class="{% if not selected_category %}active{% endif %}"
+        >
+            All
+        </a>
+
+
+        {% for value, label in categories %}
+
+            <a
+                href="/products/?category={{ value }}"
+                class="{% if selected_category == value %}active{% endif %}"
+            >
+                {{ label }}
+            </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    <!-- ================= PRODUCT GRID ================= -->
+
+    <div class="product-grid">
+
+
+        {% for product in products %}
+
+
+            <div class="product-card">
+
+
+                <!-- ================= IMAGE ================= -->
+
+                <div class="product-image">
+
+                    {% if product.image %}
+
+                        <img
+                            src="{{ product.image.url }}"
+                            alt="{{ product.name }}"
+                        >
+
+                    {% else %}
+
+                        <div class="no-image">
+
+                            📦
+
+                            <span>
+                                No Image
+                            </span>
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- ================= PRODUCT INFO ================= -->
+
+                <div class="product-info">
+
+
+                    <span class="product-category">
+
+                        {{ product.subcategory }}
+
+                    </span>
+
+
+                    <h2>
+
+                        {{ product.name }}
+
+                    </h2>
+
+
+                    {% if product.brand %}
+
+                        <p>
+
+                            <strong>
+                                Brand:
+                            </strong>
+
+                            {{ product.brand }}
+
+                        </p>
+
+                    {% endif %}
+
+
+                    {% if product.model %}
+
+                        <p>
+
+                            <strong>
+                                Model:
+                            </strong>
+
+                            {{ product.model }}
+
+                        </p>
+
+                    {% endif %}
+
+
+                    {% if product.size %}
+
+                        <p>
+
+                            <strong>
+                                Size:
+                            </strong>
+
+                            {{ product.size }}
+
+                        </p>
+
+                    {% endif %}
+
+
+                    <!-- ================= PRICE ================= -->
+
+                    <div class="product-price enquiry-price">
+
+                        Contact for Price
+
+                    </div>
+
+
+                    <!-- ================= VIEW DETAILS ================= -->
+
+                    <a
+                        href="{% url 'product_detail' product.id %}"
+                        class="view-details-btn"
+                    >
+
+                        👁️ View Details
+
+                    </a>
+
+
+                    <!-- ================= WHATSAPP ================= -->
+
+                    <a
+                        href="https://wa.me/919798323932?text=Hello%2C%20I%20want%20to%20know%20the%20price%20and%20availability%20of%20{{ product.name|urlencode }}"
+                        target="_blank"
+                        class="whatsapp-btn"
+                    >
+
+                        💬 WhatsApp Enquiry
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        {% empty %}
+
+
+            <!-- ================= NO PRODUCTS ================= -->
+
+            <div class="empty-products">
+
+                <div>
+                    🔍
+                </div>
+
+                <h2>
+                    No Products Found
+                </h2>
+
+                <p>
+                    Try another search or category.
+                </p>
+
+                <a href="/products/">
+                    View All Products
+                </a>
+
+            </div>
+
+
+        {% endfor %}
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        My Shop
+
+    </div>
+
+
+    <p>
+
+        Coolers • Fans • Heaters • Diwali Lights
+        • Spare Parts
+
+    </p>
+
+
+    <p class="copyright">
+
+        © 2026 My Shop. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
